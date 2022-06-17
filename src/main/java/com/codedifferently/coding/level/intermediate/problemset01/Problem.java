@@ -16,8 +16,15 @@ public class Problem {
      */
 
     public static String stringCopies(String word, int n) {
+        String wordAppend = word.substring(0);
+        StringBuilder builder =new StringBuilder();
+        builder.append(word);
+        for(int i =1; i<n;i++){
+            builder.append(word);
 
-        return null;
+        }
+
+        return builder.toString();
     }
 
 
@@ -32,8 +39,14 @@ public class Problem {
      */
 
     public static Boolean followedX(String str) {
-
-        return null;
+        StringBuilder builder= new StringBuilder();
+        builder.append(str);
+        for(int i =0; i<str.length()-1;i++){
+            if(builder.charAt(i)=='x'&&builder.charAt(i+1)=='x'){
+                return true;
+            }
+        }
+        return false;
     }
 
 
@@ -50,8 +63,17 @@ public class Problem {
      */
 
     public static Integer subTwo(String str) {
+        int count =0;
+        StringBuilder builder =new StringBuilder();
+        builder.append(str);
+        for(int i =0;i<str.length()-1;i++){
+            if(builder.charAt(i)=='x'&&builder.charAt(i+1)=='x'){
+                count++;
+            }
 
-        return null;
+        }
+
+        return count-1;
     }
 
 
@@ -70,8 +92,13 @@ public class Problem {
      */
 
     public static Boolean basicNumbers123(int[] nums) {
+        for(int i =0;i<nums.length-1;i++){
+            if (nums[i] == 1 && nums[i+1]==2&&nums[i+2]==3) {
+                return true;
+            }
+        }
 
-        return null;
+        return false;
     }
 
 
@@ -90,8 +117,15 @@ public class Problem {
      */
 
     public static String scrambleOfLetters(String scramble) {
+        StringBuilder builder =new StringBuilder();
+        builder.append(scramble);
+        StringBuilder result = new StringBuilder();
+        for(int i=0;i<scramble.length()-1;i++){
+            result.append(builder.charAt(i));
+            result.append(builder.charAt(i+1));
 
-        return null;
+        }
+        return result.toString();
     }
 
 
@@ -108,7 +142,20 @@ public class Problem {
      */
 
     public static Boolean dontAcceptTriples(int[] score) {
+        int count=0;
+        for(int i =0; i<score.length-1;i++){
+            if(score[i]==score[i+1]&&score[i+1]==score[i+2]&&score[i+2]==score[i+3]){
+                count++;
+            }else{
+                count=0;
+            }
+        }
+        if(count>=3){
+            return false;
+        }
 
-        return null;
+
+
+        return true;
     }
 }
